@@ -3,204 +3,445 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome — Tu Departamento de Innovación</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Welcome — Tu Departamento de Innovación & IA. Automatizamos lo que frena tu crecimiento y construimos el futuro de tu negocio con Inteligencia Artificial aplicada.">
-  <meta name="keywords" content="Innovación, IA, Inteligencia Artificial, Automatización, Consultoría Tecnológica, Crecimiento de Negocios">
-  <link rel="canonical" href="https://welcometoia.com/">
-  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
-  <link rel="apple-touch-icon" href="favicon.jpeg">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://welcometoia.com/">
-  <meta property="og:title" content="Welcome — Tu Departamento de Innovación">
-  <meta property="og:description" content="No somos una consultora, somos tu equipo de innovación. Automatizamos y escalamos tu negocio con IA.">
-  <meta property="og:image" content="https://welcometoia.com/hero-bg.png">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://welcometoia.com/">
-  <meta property="twitter:title" content="Welcome — Tu Departamento de Innovación">
-  <meta property="twitter:description" content="No somos una consultora, somos tu equipo de innovación. Automatizamos y escalamos tu negocio con IA.">
-  <meta property="twitter:image" content="https://welcometoia.com/hero-bg.png">
-
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<title>Welcome IA — Inteligencia Artificial para tu negocio</title>
+<meta name="description" content="Consultora de IA para PYMEs. Automatizamos, diagnosticamos y ejecutamos. Buenos Aires.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAV -->
+<!-- env -->
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+<div class="grid-bg"></div>
+<div class="pc pc-tl"></div><div class="pc pc-tr"></div>
+<div class="pc pc-bl"></div><div class="pc pc-br"></div>
+
+<!-- cursor -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<canvas id="particles"></canvas>
+
+<!-- ═══ NAV ═══ -->
 <nav>
-  <a href="#" class="nav-logo">
-    <img src="logo.jpeg" alt="Welcome Logo" width="40" height="40">
-    <span>WELCOME</span>
-  </a>
-  <a href="#contacto" class="nav-cta">Agendá una llamada →</a>
+  <a href="#hero" class="nav-logo">WELCOME <em style="font-style:italic;opacity:.7;">to</em></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#metodologia">Metodología</a></li>
+    <li><a href="#casos">Casos</a></li>
+    <li><a href="#" id="nav-manifiesto" style="color:var(--pink);text-shadow:0 0 12px var(--pink);">Manifiesto</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Hablar con nosotros</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-left">
-    <p class="hero-tag">// Departamento de Innovación & IA</p>
-    <h1 class="hero-title">
-      TU NEGOCIO<span>NO ESCALA</span><em>SOLO.</em>
-    </h1>
-    <p class="hero-sub">Welcome no es una consultora que te da un PDF y desaparece. Nos sentamos en tu mesa, automatizamos lo que frena tu crecimiento y construimos el futuro de tu negocio.</p>
-    <div class="hero-cta-group">
-      <a href="#contacto" class="btn-primary">Agendá tu llamada gratis</a>
-      <a href="#servicios" class="btn-secondary">Ver cómo trabajamos</a>
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <!-- VIDEO BACKGROUND -->
+  <div class="hero-video-wrap">
+    <video id="hero-video" autoplay muted loop playsinline>
+      <source id="hero-vid-src" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
+  <div class="ship-lines">
+    <svg viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Ship silhouette structural lines -->
+      <line x1="450" y1="0" x2="450" y2="900" stroke="#00d4ff" stroke-width="0.5"/>
+      <line x1="0" y1="450" x2="900" y2="450" stroke="#00d4ff" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="900" y2="900" stroke="#00d4ff" stroke-width="0.3"/>
+      <line x1="900" y1="0" x2="0" y2="900" stroke="#00d4ff" stroke-width="0.3"/>
+      <circle cx="450" cy="450" r="300" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="4 8"/>
+      <circle cx="450" cy="450" r="180" stroke="#b040ff" stroke-width="0.5" stroke-dasharray="3 6"/>
+      <circle cx="450" cy="450" r="80" stroke="#ff3fa4" stroke-width="0.5"/>
+      <!-- Wing angles -->
+      <polygon points="450,100 200,450 450,350 700,450" stroke="#00d4ff" stroke-width="0.8" fill="none"/>
+      <polygon points="450,800 200,450 450,550 700,450" stroke="#b040ff" stroke-width="0.8" fill="none"/>
+      <!-- Cross hairs -->
+      <line x1="420" y1="450" x2="480" y2="450" stroke="#00d4ff" stroke-width="1"/>
+      <line x1="450" y1="420" x2="450" y2="480" stroke="#00d4ff" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">LATAM · IA para PYMEs</p>
+  <div class="hero-title-wrap" id="title-wrap">
+    <h1 class="hero-title" id="glitch-title">WELCOME<br><em class="hero-to">to</em> IA</h1>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="stat-blocks">
-      <div class="stat-block">
-        <div class="stat-number">79%</div>
-        <div class="stat-label">De empresas ya adoptaron IA en 2024</div>
+  <p class="hero-sub">// Departamento externo de Inteligencia Artificial, Mejora Continua e Innovación</p>
+  <span class="hero-line"></span>
+  <p class="hero-copy">La inteligencia artificial cambió cómo operan los negocios. Por un tiempo ese cambio fue solo para algunos pocos. Hoy ponemos a tu disposición las mismas herramientas que usan las empresas más prestigiosas del mundo, en tu negocio. Entramos a fondo, ejecutamos, medimos y potenciamos tu crecimiento.</p>
+  <div class="hero-ctas">
+    <a href="#cta" class="btn btn-primary">Empezar ahora</a>
+    <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+  </div>
+
+  <div class="scroll-ind">
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ═══ SOBRE ═══ -->
+<section id="sobre">
+  <div class="section-max">
+    <div class="sobre-grid reveal">
+      <div class="sobre-left">
+        <div class="s-eyebrow">
+          <span class="s-eyebrow-text">// Quiénes somos</span>
+          <div class="s-eyebrow-line"></div>
+        </div>
+        <h2 class="s-title">Ejecutamos donde otros consultan.</h2>
+        <p class="sobre-copy">Welcome IA es una <strong>start-up</strong> que empezó como una consultora y en el último año se convirtió en un <strong>departamento de inteligencia artificial, mejora continua e innovación externo</strong> que se integra a tu negocio. Especializada en PYMEs con procesos desorganizados y potencial sin explotar en todo <strong>LATAM</strong>.</p>
+        <p class="sobre-copy">Preferimos que los <strong>resultados hablen por nosotros</strong>. Entramos, diagnosticamos, ejecutamos y medimos. El modelo es simple: resultados primero, relación a largo plazo después.</p>
+        <p class="sobre-copy">Trabajamos con pocos clientes y en profundidad. Eso nos permite ser ejecutores, consultores estratégicos y socios de innovación al mismo tiempo.</p>
       </div>
-      <div class="stat-block">
-        <div class="stat-number">+21%</div>
-        <div class="stat-label">Aumento en rentabilidad con tecnología</div>
+      <div class="sobre-right">
+        <div class="sobre-img-wrap">
+          <div class="sobre-img-border"></div>
+          <img class="sobre-img" src="sobre-nosotros.jpg" alt="Inteligencia Artificial — cerebro con circuitos">
+          <div class="sobre-img-overlay"></div>
+          <div class="sobre-img-corner sobre-img-corner-tl"></div>
+          <div class="sobre-img-corner sobre-img-corner-tr"></div>
+          <div class="sobre-img-corner sobre-img-corner-bl"></div>
+          <div class="sobre-img-corner sobre-img-corner-br"></div>
+        </div>
       </div>
-      <div class="stat-block">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">Tu potencial sin límites de horario ni recursos</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICIOS ═══ -->
+<section id="servicios">
+  <div class="section-max">
+    <div class="s-eyebrow reveal">
+      <span class="s-eyebrow-text">// Servicios</span>
+      <div class="s-eyebrow-line"></div>
+    </div>
+    <h2 class="s-title reveal" style="margin-bottom:48px;">Lo que hacemos</h2>
+    <div class="servicios-grid reveal">
+      <div class="servicio">
+        <p class="srv-icon">01 // DIAGNÓSTICO</p>
+        <h3 class="srv-title">Diagnóstico IA</h3>
+        <p class="srv-desc">Mapeamos tus procesos actuales, identificamos fricciones y diseñamos un plan de implementación de IA adaptado a tu negocio.</p>
+      </div>
+      <div class="servicio">
+        <p class="srv-icon">02 // AUTOMATIZACIÓN</p>
+        <h3 class="srv-title">Automatización de Procesos</h3>
+        <p class="srv-desc">Conectamos tus herramientas, eliminamos trabajo manual y construimos flujos que funcionan solos. n8n, Make, APIs custom.</p>
+      </div>
+      <div class="servicio">
+        <p class="srv-icon">03 // AGENTES</p>
+        <h3 class="srv-title">Agentes de IA</h3>
+        <p class="srv-desc">Desplegamos agentes que atienden clientes, procesan información y ejecutan tareas complejas sin intervención humana.</p>
+      </div>
+      <div class="servicio">
+        <p class="srv-icon">04 // ADS + IA</p>
+        <h3 class="srv-title">Estrategia Digital + IA</h3>
+        <p class="srv-desc">Campañas de Google Ads potenciadas con análisis de datos e IA. Encontramos el momento exacto donde está tu cliente.</p>
+      </div>
+      <div class="servicio">
+        <p class="srv-icon">05 // DATA</p>
+        <h3 class="srv-title">Inteligencia de Datos</h3>
+        <p class="srv-desc">Convertimos datos dispersos en dashboards accionables. Decisiones basadas en evidencia, no en intuición.</p>
+      </div>
+      <div class="servicio">
+        <p class="srv-icon">06 // RETAINER</p>
+        <h3 class="srv-title">Socio de Innovación</h3>
+        <p class="srv-desc">Acompañamiento mensual continuo. Estamos en tu equipo, iterando, probando y mejorando mes a mes.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrapper">
-  <div class="marquee-track">
-    <span class="marquee-item">Automatización</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Inteligencia Artificial</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Mejora Continua</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Innovación</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Estrategia</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Crecimiento</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Automatización</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Inteligencia Artificial</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Mejora Continua</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Innovación</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Estrategia</span><span class="marquee-dot">✦</span>
-    <span class="marquee-item">Crecimiento</span><span class="marquee-dot">✦</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="nosotros">
-  <div class="about-left">
-    <p class="section-label">// Quiénes somos</p>
-    <h2 class="about-title">NO SOMOS<br>UNA<br><span>CONSULTORA.</span></h2>
-    <p class="about-text">
-      Somos tu <strong>departamento de innovación externo</strong>. Nos integramos a tu equipo, aprendemos tu negocio y trabajamos codo a codo para que crezcas de manera ordenada, inteligente y sostenible.<br><br>
-      Mientras tu equipo hace lo que sabe hacer, <strong>nosotros automatizamos lo que los frena</strong>, implementamos IA donde más impacto genera y construimos los procesos que te permiten escalar sin caos.
-    </p>
-  </div>
-  <div class="about-right">
-    <div class="diff-card">
-      <div class="diff-card-num">01</div>
-      <div class="diff-card-title">Nos sentamos en tu mesa</div>
-      <div class="diff-card-text">No te mandamos un informe y desaparecemos. Participamos de las decisiones, aportamos perspectiva fresca y estamos cuando nos necesitás.</div>
+<!-- ═══ METODOLOGÍA ═══ -->
+<section id="metodologia">
+  <div class="section-max">
+    <div class="s-eyebrow reveal">
+      <span class="s-eyebrow-text">// Cómo trabajamos</span>
+      <div class="s-eyebrow-line"></div>
     </div>
-    <div class="diff-card">
-      <div class="diff-card-num">02</div>
-      <div class="diff-card-title">Crecés vos, crecemos nosotros</div>
-      <div class="diff-card-text">Nuestro modelo está alineado con tus resultados. Tu éxito es nuestra métrica principal, no las horas facturadas.</div>
+    <div class="bib-hero reveal">
+      <h2 class="s-title">Mejor Is Better</h2>
+      <p class="bib-sub">Cada entrega debe ser superior a la anterior.</p>
     </div>
-    <div class="diff-card">
-      <div class="diff-card-num">03</div>
-      <div class="diff-card-title">IA aplicada, no teórica</div>
-      <div class="diff-card-text">Implementamos soluciones reales en tu negocio real. Nada de buzzwords. Solo herramientas que funcionan y se ven en los resultados.</div>
+    <div class="bib-steps reveal">
+      <div class="step">
+        <div class="step-node"><div class="step-node-inner"><span class="step-num">01</span></div></div>
+        <h3 class="step-name">Escuchar</h3>
+        <p class="step-desc">Entendemos tu negocio antes de proponer cualquier solución. Nada de templates.</p>
+      </div>
+      <div class="step">
+        <div class="step-node"><div class="step-node-inner"><span class="step-num">02</span></div></div>
+        <h3 class="step-name">Diagnosticar</h3>
+        <p class="step-desc">Identificamos fricciones, gaps y oportunidades reales con datos, no con suposiciones.</p>
+      </div>
+      <div class="step">
+        <div class="step-node"><div class="step-node-inner"><span class="step-num">03</span></div></div>
+        <h3 class="step-name">Ejecutar</h3>
+        <p class="step-desc">Implementamos con velocidad y criterio técnico. Entregables concretos, no presentaciones.</p>
+      </div>
+      <div class="step">
+        <div class="step-node"><div class="step-node-inner"><span class="step-num">04</span></div></div>
+        <h3 class="step-name">Iterar</h3>
+        <p class="step-desc">Medimos, ajustamos y volvemos a empezar mejor. El estándar siempre sube.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="servicios">
-  <div class="services-header">
-    <div>
-      <p class="section-label">// Lo que hacemos</p>
-      <h2 class="services-title">NUESTROS<br><span>SERVICIOS</span></h2>
+<!-- ═══ CASOS ═══ -->
+<section id="casos">
+  <div class="section-max">
+    <div class="s-eyebrow reveal">
+      <span class="s-eyebrow-text">// Resultados</span>
+      <div class="s-eyebrow-line"></div>
     </div>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <span class="service-icon">⚡</span>
-      <div class="service-name">Automatización con IA</div>
-      <div class="service-desc">Identificamos qué procesos están frenando tu negocio y los automatizamos. Menos tareas manuales, más tiempo para lo que importa.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">♻️</span>
-      <div class="service-name">Mejora Continua</div>
-      <div class="service-desc">Analizamos tus operaciones, detectamos ineficiencias y construimos sistemas que mejoran solos con el tiempo.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🌐</span>
-      <div class="service-name">Páginas Web con IA</div>
-      <div class="service-desc">Tu página no es un folleto. Es un vendedor 24/7 con IA integrada que atiende clientes, captura leads y agenda reuniones automáticamente.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🎯</span>
-      <div class="service-name">Workshops & Capacitación</div>
-      <div class="service-desc">Formamos a tu equipo para que adopte las nuevas herramientas con confianza. La tecnología vale nada sin las personas que la usan bien.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🧭</span>
-      <div class="service-name">Consultoría Estratégica</div>
-      <div class="service-desc">Claridad, planificación y dirección. Te ayudamos a tomar mejores decisiones con datos, contexto y visión de largo plazo.</div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW -->
-<section class="how" id="proceso">
-  <h2 class="how-title">CÓMO <span>TRABAJAMOS</span></h2>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="step-num">01</div>
-      <div class="step-title">Auditoría</div>
-      <div class="step-text">Nos metemos en tu negocio. Entendemos tus procesos, tus cuellos de botella, tus oportunidades ocultas. Sin prejuicios, sin fórmulas copiadas.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-num">02</div>
-      <div class="step-title">Diagnóstico</div>
-      <div class="step-text">Te presentamos un mapa claro de dónde estás perdiendo tiempo, dinero y energía. Con prioridades concretas y orden de impacto.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-num">03</div>
-      <div class="step-title">Implementación</div>
-      <div class="step-text">Ejecutamos. Construimos los sistemas, automatizamos los procesos, integramos las herramientas. No dejamos nada en papel.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-num">04</div>
-      <div class="step-title">Acompañamiento</div>
-      <div class="step-text">No desaparecemos. Medimos resultados, ajustamos, mejoramos. Somos parte de tu equipo mientras lo necesitás.</div>
+    <h2 class="s-title reveal" style="margin-bottom:48px;">Casos reales</h2>
+    <div class="caso-grid reveal">
+      <div class="caso featured">
+        <p class="caso-tag">// Lanzamiento buscoabogadopenalista.com · Estudio Jurídico</p>
+        <h3 class="caso-title">Estrategia exitosa de conversión — De Cero a USD 12.000 en 3 Semanas</h3>
+        <p class="caso-desc">En un mercado saturado como lo es el rubro de abogacía penal en Buenos Aires, identificamos la manera más eficiente de lograr resultados increíbles en el primer mes. Diseñamos una estrategia de Google Ads con scheduling agresivo off-peak, copy de urgencia y landing pages por nicho. Tres casos de ticket alto cerrados en tres semanas desde cero presencia digital.</p>
+        <div style="display:flex;gap:40px;flex-wrap:wrap;">
+          <div class="caso-result"><span class="result-num">USD 12K</span><span class="result-label">Generados</span></div>
+          <div class="caso-result"><span class="result-num">3</span><span class="result-label">Semanas</span></div>
+          <div class="caso-result"><span class="result-num">0→</span><span class="result-label">Presencia previa</span></div>
+        </div>
+      </div>
+      <div class="caso">
+        <p class="caso-tag">// Campo Madera · Colonia del Sacramento</p>
+        <h3 class="caso-title">Digitalización de Maderera</h3>
+        <p class="caso-desc">Diagnóstico completo de procesos, diseño de sistema de gestión y estrategia digital para aserradero familiar con décadas de historia y procesos completamente analógicos.</p>
+        <div class="caso-result"><span class="result-num">En curso</span><span class="result-label">Esperando feedback para comenzar la implementación.</span></div>
+      </div>
+      <div class="caso">
+        <p class="caso-tag">// Empresa de Seguros</p>
+        <h3 class="caso-title">Generador de Contenido para Productores</h3>
+        <p class="caso-desc">MVP de herramienta Canva-style con IA integrada para que productores de seguros generen piezas de comunicación en segundos.</p>
+        <div class="caso-result"><span class="result-num">MVP</span><span class="result-label">Propuesta entregada</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contacto">
-  <p class="cta-label">// El momento es ahora</p>
-  <h2 class="cta-title">ADOPTÁ IA<br><span>AHORA.</span></h2>
-  <p class="cta-sub">Es un acto de amor para tu empresa. Accedé gratis a un diagnóstico sin costo, con toda la claridad que tu negocio necesita.</p>
-  <a href="https://calendly.com" target="_blank" class="cta-btn">Agendá tu llamada gratis →</a>
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <!-- CTA VIDEO PANEL -->
+  <div class="cta-video-frame">
+    <video id="cta-video" autoplay muted loop playsinline>
+      <source id="cta-vid-src" type="video/mp4">
+    </video>
+    <div class="cta-video-glitch" id="cta-glitch"></div>
+    <div class="cta-video-led-frame"></div>
+    <div class="cta-video-scanlines"></div>
+  </div>
+  <div class="section-max">
+    <div class="s-eyebrow" style="justify-content:center;margin-bottom:32px;">
+      <span class="s-eyebrow-text">// Siguiente paso</span>
+    </div>
+    <h2 class="s-title reveal">¿Tu negocio<br>está listo para<br>despegar?</h2>
+    <p class="cta-sub reveal">Hablamos 30 minutos. Diagnóstico sin compromiso. Si no vemos oportunidad real, te lo decimos.</p>
+    <div class="hero-ctas reveal">
+      <a href="mailto:hola@welcomeia.com" class="btn btn-primary">Agendar llamada</a>
+      <a href="#sobre" class="btn btn-ghost">Conocer más</a>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-logo">WELCOME</div>
-  <div class="footer-copy">© 2025 Welcome. Todos los derechos reservados.</div>
-  <div class="footer-links">
-    <a href="#nosotros">Nosotros</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#proceso">Proceso</a>
-    <a href="#contacto">Contacto</a>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-logo">WELCOME IA</p>
+      <p class="footer-tagline">Inteligencia artificial para negocios reales.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#sobre">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#metodologia">BIB</a></li>
+      <li><a href="#casos">Casos</a></li>
+    </ul>
+    <div class="footer-right">
+      <div class="signal-row">
+        <div class="sd sd1"></div><div class="sd sd2"></div><div class="sd sd3"></div>
+      </div>
+      <p class="footer-copy">© 2026 Welcome to IA. Todos los derechos reservados.</p>
+    </div>
   </div>
 </footer>
 
+<!-- ═══ WHATSAPP FLOAT ═══ -->
+<a id="wa-float" href="https://wa.me/5491100000000" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ═══ MANIFIESTO MODAL ═══ -->
+<div id="manifiesto-modal" aria-hidden="true" role="dialog" aria-label="Manifiesto Welcome IA">
+  <div class="mnf-grain"></div>
+  <div class="mnf-orb mnf-orb-1"></div>
+  <div class="mnf-orb mnf-orb-2"></div>
+  <div class="mnf-orb mnf-orb-3"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="mnf-hero">
+      <div class="mnf-hero-top">
+        <span class="mnf-logo">Welcome IA</span>
+        <span>MMXXVI · Manifiesto</span>
+      </div>
+      <div class="mnf-hero-center">
+        <div class="mnf-label mnf-hero-label">Manifiesto · 01</div>
+        <h1 class="mnf-hero-title">
+          <span class="mnf-line">El tiempo</span>
+          <span class="mnf-line mnf-grad">es sagrado.</span>
+        </h1>
+        <p class="mnf-hero-sub">Un manifiesto sobre por qué construimos lo que construimos. Sobre el recurso más sagrado que tenemos, y sobre la vida que aún podemos elegir.</p>
+      </div>
+      <div class="mnf-hero-bottom">
+        <div class="mnf-scroll-cue"><span>Leer</span><span class="mnf-arrow"></span></div>
+        <div class="mnf-hero-meta">Welcome IA<br>welcometoia.com</div>
+      </div>
+    </section>
+
+    <!-- ACT 1 -->
+    <section class="mnf-act">
+      <div class="mnf-container">
+        <div class="mnf-act-header mnf-reveal">
+          <span class="mnf-act-number">01 / Diagnóstico</span>
+          <h2 class="mnf-act-title">El sistema te lo está consumiendo.</h2>
+        </div>
+        <div class="mnf-diagnosis-block">
+          <div class="mnf-three-lines mnf-reveal">
+            <div class="mnf-tl">El tiempo no espera.</div>
+            <div class="mnf-tl">No se negocia.</div>
+            <div class="mnf-tl">No se recupera.</div>
+          </div>
+          <div class="mnf-diag-body mnf-reveal">
+            <p>Y sin embargo, vivimos atrapados en un sistema diseñado para consumirlo.</p>
+            <p>Tareas repetitivas. Decisiones urgentes que no son importantes. Ruido constante. Pantallas que prometen conectarnos y nos dejan más solos. Trabajos que generan dinero pero vacían el alma.</p>
+            <p>Mientras tanto, <em>la vida pasa.</em> Y con ella, la posibilidad de construir algo verdadero.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 2 -->
+    <section class="mnf-act">
+      <div class="mnf-container">
+        <div class="mnf-act-header mnf-reveal">
+          <span class="mnf-act-number">02 / Nuestra creencia</span>
+          <h2 class="mnf-act-title">Tres cosas que <span class="mnf-grad">vinimos a devolverte.</span></h2>
+        </div>
+        <div class="mnf-pillars">
+          <div class="mnf-pillar mnf-reveal">
+            <div class="mnf-pillar-num">I</div>
+            <div class="mnf-pillar-word">Tiempo</div>
+            <p class="mnf-pillar-text">Para pensar. Para crear. Para estar presente con los que amás. Para esos cinco minutos más que necesitabas.</p>
+          </div>
+          <div class="mnf-pillar mnf-reveal">
+            <div class="mnf-pillar-num">II</div>
+            <div class="mnf-pillar-word">Paz</div>
+            <p class="mnf-pillar-text">Para tomar decisiones desde la claridad, no desde el apuro. Para trabajar sin que el trabajo te coma por dentro.</p>
+          </div>
+          <div class="mnf-pillar mnf-reveal">
+            <div class="mnf-pillar-num">III</div>
+            <div class="mnf-pillar-word">Recursos</div>
+            <p class="mnf-pillar-text">Para construir la vida que vos elegís, no la que otros eligieron por vos. Para que ganar dinero deje de costarte la vida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 3 -->
+    <section class="mnf-act">
+      <div class="mnf-container">
+        <div class="mnf-act-header mnf-reveal">
+          <span class="mnf-act-number">03 / Lo utópico</span>
+          <h2 class="mnf-act-title">No es ingenuo. <span class="mnf-grad">Es una elección.</span></h2>
+        </div>
+        <div class="mnf-quotes mnf-reveal">
+          <p class="mnf-quote">"Menos es más."<span class="mnf-author">Mies van der Rohe</span></p>
+          <p class="mnf-quote">"Sí es más."<span class="mnf-author">Bjarke Ingels</span></p>
+        </div>
+        <div class="mnf-utopia-decl mnf-reveal">
+          <div class="mnf-small">Nosotros decimos</div>
+          <div class="mnf-big mnf-grad">Lo utópico es posible.</div>
+        </div>
+        <div class="mnf-possibilities mnf-reveal">
+          <div class="mnf-possibility"><span class="mnf-dot"></span><span>Es posible trabajar menos y producir más.</span></div>
+          <div class="mnf-possibility"><span class="mnf-dot"></span><span>Es posible ganar dinero y vivir tranquilo.</span></div>
+          <div class="mnf-possibility"><span class="mnf-dot"></span><span>Es posible disfrutar lo que hacés y construir un futuro distinto.</span></div>
+          <div class="mnf-possibility"><span class="mnf-dot"></span><span>Es posible cambiar el mundo desde el día a día, decisión a decisión, con conciencia.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 4 -->
+    <section class="mnf-bienvenido">
+      <div class="mnf-bienvenido-stack">
+        <div class="mnf-act-header mnf-reveal">
+          <span class="mnf-act-number">04 / Bienvenida</span>
+          <h2 class="mnf-act-title">Bienvenido a la <span class="mnf-grad">vida que estaba esperando.</span></h2>
+        </div>
+        <div class="mnf-movement mnf-reveal">
+          <div class="mnf-mvmt-label">I · Lo íntimo</div>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a la tranquilidad que siempre soñaste.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a esos cinco minutos más que necesitabas para pensar.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a la calma.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a las decisiones que siempre quisiste tomar.</p>
+        </div>
+        <div class="mnf-movement mnf-reveal">
+          <div class="mnf-mvmt-label">II · El yo</div>
+          <p class="mnf-bv-line mnf-accent"><span class="mnf-b">Bienvenido</span> a tu nuevo yo.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a soltar el ego.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a agarrar el presente.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a agarrar las riendas de tu empresa.</p>
+        </div>
+        <div class="mnf-movement mnf-reveal">
+          <div class="mnf-mvmt-label">III · La obsesión consciente</div>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a visualizar el futuro.</p>
+          <p class="mnf-bv-line"><span class="mnf-b">Bienvenido</span> a leer cada dato con obsesión.</p>
+          <p class="mnf-bv-line">Obsesión por los resultados.</p>
+          <p class="mnf-bv-line">Por el impacto en las personas. En el medio ambiente.</p>
+          <div class="mnf-values-row"><span>Ayudar.</span><span>Proteger.</span><span>Potenciar.</span><span>Capacitar.</span><span>Educar.</span></div>
+          <p class="mnf-bv-line" style="margin-top:24px">Reinventarnos cada día.</p>
+        </div>
+        <div class="mnf-movement mnf-reveal">
+          <div class="mnf-mvmt-label">IV · La nueva realidad</div>
+          <p class="mnf-bv-line mnf-accent"><span class="mnf-b">Bienvenido</span> a las formas de vida más adaptativas de la historia.</p>
+          <p class="mnf-bv-line">Donde cada día uno puede cambiar.</p>
+          <p class="mnf-bv-line">Donde cada herramienta crece, y uno crece con ella.</p>
+          <p class="mnf-bv-line">Donde hay tiempo para trabajar la mente, el cuerpo y el alma.</p>
+          <p class="mnf-bv-line">Donde todo lo que parecía utópico se vuelve realidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5 -->
+    <section class="mnf-close-act">
+      <p class="mnf-close-pre mnf-reveal">Bienvenido a esa realidad.</p>
+      <p class="mnf-close-mid mnf-reveal">Más que una bienvenida.</p>
+      <h2 class="mnf-welcome-mega mnf-reveal">Welcome.</h2>
+      <p class="mnf-close-tagline mnf-reveal"><em>Bienvenido a tu próxima vida.</em></p>
+    </section>
+  </main>
+
+  <div class="mnf-footer">
+    <div class="mnf-footer-inner">
+      <span class="mnf-footer-logo">Welcome IA</span>
+      <span>welcometoia.com · MMXXVI</span>
+      <span>El tiempo es sagrado</span>
+    </div>
+  </div>
+</div>
+
+<!-- Botón cerrar manifiesto -->
+<button id="mnf-close-btn" aria-label="Cerrar manifiesto">✕ &nbsp;Cerrar</button>
+
+<script defer src="script.js"></script>
 </body>
 </html>
